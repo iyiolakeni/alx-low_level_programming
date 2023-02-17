@@ -19,9 +19,9 @@ int main(void)
 				for (d = b + 1; d < 10; d++)
 				{
 					putchar('0' + a);
-					putchar('0' + b);
-					putchar(' ');
 					putchar('0' + c);
+					putchar(' ');
+					putchar('0' + b);
 					putchar('0' + d);
 
 					if (!((a == 9 && b == 8) && (c == 9 && d == 9)))
