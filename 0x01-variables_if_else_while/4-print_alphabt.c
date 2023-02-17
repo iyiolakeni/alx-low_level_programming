@@ -7,11 +7,12 @@ int main(void)
 {
 	char ch;
 
+printalp:
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
 		if (ch == 'q' || ch == 'e')
 		{
-			goto;
+			goto printalp;
 		}
 		putchar(ch);
 	}
