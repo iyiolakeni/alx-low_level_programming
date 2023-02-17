@@ -11,9 +11,8 @@ int main(void)
 	{
 		if (ch == 'q' || ch == 'e')
 		{
-			goto printalp;
+			continue;
 		}
-printalp:
 		putchar(ch);
 	}
 	putchar('\n');
