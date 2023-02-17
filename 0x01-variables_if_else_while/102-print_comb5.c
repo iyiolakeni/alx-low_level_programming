@@ -18,7 +18,7 @@ int main(void)
 			putchar(b / 10 + '0');
 			putchar(b % 10 + '0');
 
-			if (!(a == 98 && j == 99))
+			if (!(a == 98 && b == 99))
 			{
 				putcgar(',');
 				putchar(' ');
