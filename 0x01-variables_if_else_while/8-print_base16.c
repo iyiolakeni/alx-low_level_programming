@@ -6,9 +6,12 @@
 int main(void)
 {
 	int i = 0;
+	int let = 'a';
 
 	for (; i <= 15; i++)
-		putchar('%x' + i);
+		putchar(i);
+	for (; let <= 'f')
+		putchar(let);
 	putchar('\n');
 	return (0);
 }
