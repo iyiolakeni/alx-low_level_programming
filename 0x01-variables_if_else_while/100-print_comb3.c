@@ -12,8 +12,8 @@ int main(void)
 	{
 		for (a = (b + 1); a < 10; a++)
 		{
-			putchar(b);
-			putchar(a);
+			putchar('0' + b);
+			putchar('0' + a);
 
 			if (b != 8 || a != 9)
 			{
