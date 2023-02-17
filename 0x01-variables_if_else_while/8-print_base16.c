@@ -8,7 +8,7 @@ int main(void)
 	int i;
 	int let = 'a';
 
-	for (i = 0; i <= 10; i++)
+	for (i = '0'; i < '10'; i++)
 		putchar(i);
 	for (; let <= 'f'; let++)
 		putchar(let);
