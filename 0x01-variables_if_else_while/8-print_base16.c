@@ -10,7 +10,7 @@ int main(void)
 
 	for (; i <= 15; i++)
 		putchar(i);
-	for (; let <= 'f')
+	for (; let <= 'f'; let++)
 		putchar(let);
 	putchar('\n');
 	return (0);
