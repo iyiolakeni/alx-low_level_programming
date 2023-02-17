@@ -7,13 +7,13 @@ int main(void)
 {
 	char ch;
 
-printalp:
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
 		if (ch == 'q' || ch == 'e')
 		{
 			goto printalp;
 		}
+printalp:
 		putchar(ch);
 	}
 	putchar('\n');
