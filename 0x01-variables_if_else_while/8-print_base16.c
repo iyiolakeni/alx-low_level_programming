@@ -5,7 +5,7 @@
 */
 int main(void)
 {
-	int i;
+	int i = '0';
 	int let = 'a';
 
 	for (i = '0'; i < '10'; i++)
