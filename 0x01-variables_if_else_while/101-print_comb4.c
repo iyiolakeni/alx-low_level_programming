@@ -11,17 +11,20 @@ int main(void)
 
 	for (c = 0; c < 10; c++)
 	{
-		for (b = (c + 1); b < 10; b++)
+		for (b = 0; b < 10; b++)
 		{
-			for (a = (b + 1); a < 10; a++)
+			for (a = 0; a < 10; a++)
 			{
-				putchar('0' + c);
-				putchar('0' + b);
-				putchar('0' + a);
-				if (c != 7 || b != 8 a != 9)
+				if (c > b && b > a)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar('0' + c);
+					putchar('0' + b);
+					putchar('0' + a);
+					if (c != 7 || b != 8 a != 9)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
