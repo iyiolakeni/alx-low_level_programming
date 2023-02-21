@@ -5,9 +5,9 @@
  * @int: value to be compared
  * Return: int
 */
-int _abs(int)
+int _abs(int n)
 {
-	int n = abs(n);
+	n = abs(n);
 
 	return (n);
 }
