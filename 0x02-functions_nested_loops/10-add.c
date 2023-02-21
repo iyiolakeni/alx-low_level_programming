@@ -7,6 +7,5 @@
 */
 int add(int n, int x)
 {
-	_putchar(n + x);
 	return (n + x);
 }
