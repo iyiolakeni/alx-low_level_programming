@@ -1,5 +1,5 @@
 #include "main.h"
-#include <cstdlib>
+#include <stdlib.h>
 /**
  * _abs- print absolute value of an integer
  * @int: value to be compared
