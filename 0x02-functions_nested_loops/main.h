@@ -72,4 +72,10 @@ int add(int, int);
  *
  */
 void print_to_98(int n);
+/**
+ * print_times_table- print n times table
+ * @n: value to multiply
+ * 
+ */
+void print_times_table(int n);
 #endif
