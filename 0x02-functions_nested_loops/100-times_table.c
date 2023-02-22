@@ -11,27 +11,26 @@ void print_times_table(int n)
 	{
 		for (i = 0; i <= n; i++)
 		{
+			_putchar('0');
+
 			for (j = 0; j <= n; j++)
 			{
+				_putchar(',');
+				_putchar(' ');
+
 				int times = j * i;
 
-				if (j == 0)
+				if (times <= 9)
 				{
-					_putchar('0');
-				} else if (times <= 9)
-				{
-					write(',', ' ', ' ', ' ', '0' + times);
+					_putchar(' ');
+					_putchar(' ');
 				} else if (times > 99)
 				{
-					_putchar(',');
-					_putchar(' ');
 					_putchar('0' + (times / 100));
 					_putchar('0' + ((times / 10) % 10));
 					_putchar('0' + (times % 10));
 				} else
 				{
-					_putchar(',');
-					_putchar(' ');
 					_putchar(' ');
 					_putchar('0' + (times / 10));
 					_putchar('0' + (times % 10));
