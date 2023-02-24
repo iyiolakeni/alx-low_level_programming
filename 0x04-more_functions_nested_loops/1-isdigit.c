@@ -8,8 +8,11 @@
 
 int _isdigit(int c)
 {
-	if (isdigit(c))
+	for (c = 0; c <= 9; c++)
+	{
+		if (isdigit(c))
 		return (1);
 	else
 		return (0);
+	}
 }
