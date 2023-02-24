@@ -83,4 +83,11 @@ void print_triangle(int size);
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c);
+
+/**
+ * print_number- print integers
+ * @n: number of integer
+ * Return: 0 always
+*/
+void print_number(int n);
 #endif
