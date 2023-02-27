@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include <string.h>
+#include "2-strlen.c"
 #include "main.h"
 /**
-* print_rev- reverse string
+* rev_string- reverse string function
 * @s: letter to be checked
 *
-* Return: 0 always
 */
 void rev_string(char *s)
 {
-	int i, n = strlen(s);
+	int i, n = _strlen(s);
 	char ch;
 
 	for (i = 0; i < n / 2; i++)
