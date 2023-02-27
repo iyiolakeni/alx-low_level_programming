@@ -18,7 +18,7 @@ void randomPasswordGeneration(int no)
     srand((unsigned int)(time(NULL)));
     */
     /* Array of numbers */
-    char numbers[] = "0123456789";
+    int numbers[] = "0123456789";
   
     /* Array of small alphabets */
     char letter[] = "abcdefghijklmnoqprstuvwyzx";
