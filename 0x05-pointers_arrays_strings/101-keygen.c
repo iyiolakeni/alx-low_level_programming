@@ -11,7 +11,7 @@ void randomPasswordGeneration(int no)
     int i = 0;
     no = 10;
   
-    int randomizer = 0;
+    int randomizer;
   
     /** Seed the random-number generator
     * with current time so that the
@@ -66,8 +66,8 @@ void randomPasswordGeneration(int no)
 int main()
 {
     /* Function Call */
-	int no;
-    randomPasswordGeneration(no);
+	int n = 10
+    randomPasswordGeneration(n);
   
-    return 0;
+    return (0);
 }
