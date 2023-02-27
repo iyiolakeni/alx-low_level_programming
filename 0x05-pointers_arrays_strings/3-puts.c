@@ -6,9 +6,8 @@
 *
 * Return: 0 always
 */
-int _puts(char *str)
+void _puts(char *str)
 {
 	puts(str);
 	puts("\n");
-	return (0);
 }
