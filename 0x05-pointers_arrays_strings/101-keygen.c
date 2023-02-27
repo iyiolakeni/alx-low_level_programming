@@ -9,6 +9,7 @@ void randomPasswordGeneration(int no)
 {
     /* Initialize counter */
     int i = 0;
+    no = 10;
   
     int randomizer = 0;
   
@@ -35,7 +36,7 @@ void randomPasswordGeneration(int no)
     /* To select the randomizer inside the loop */
     randomizer = rand() % 4;
   
-    /* Iterate over the range [0, N] */
+    /* Iterate over the range [0, no] */
     for (i = 0; i < no; i++) {
   
         if (randomizer == 1) {
@@ -64,11 +65,8 @@ void randomPasswordGeneration(int no)
 /* Driver Code */
 int main()
 {
-    /* Length of the password to be generated */
-    int N = 10;
-  
     /* Function Call */
-    randomPasswordGeneration(N);
+    randomPasswordGeneration(no);
   
     return 0;
 }
