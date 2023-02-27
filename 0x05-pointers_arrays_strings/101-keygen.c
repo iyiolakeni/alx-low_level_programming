@@ -5,7 +5,7 @@
   
 /* Function to randomly generates password */
 /* of length N */
-void randomPasswordGeneration(int N)
+void randomPasswordGeneration(int no)
 {
     /* Initialize counter */
     int i = 0;
@@ -30,13 +30,13 @@ void randomPasswordGeneration(int N)
     char symbols[] = "!@#$^&*?";
   
     /* Stores the random password */
-    char password[N];
+    char password[no];
   
     /* To select the randomizer inside the loop */
     randomizer = rand() % 4;
   
     /* Iterate over the range [0, N] */
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < no; i++) {
   
         if (randomizer == 1) {
             password[i] = numbers[rand() % 10];
