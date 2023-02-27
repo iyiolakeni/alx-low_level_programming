@@ -30,7 +30,7 @@ void randomPasswordGeneration(int no)
     char symbols[] = "!@#$^&*?";
   
     /* Stores the random password */
-    char password[no];
+    char password[];
   
     /* To select the randomizer inside the loop */
     randomizer = rand() % 4;
