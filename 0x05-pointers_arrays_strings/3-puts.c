@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include "stdio.h"
 /**
 * _puts- update the value it points to
 * @str: letter to be checked
