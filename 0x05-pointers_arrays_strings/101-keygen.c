@@ -11,8 +11,7 @@ void randomPasswordGeneration(int no)
     int i = 0;
     no = 10;
   
-    int randomizer;
-  
+     
     /** Seed the random-number generator
     * with current time so that the
     *numbers will be different every time
@@ -34,7 +33,7 @@ void randomPasswordGeneration(int no)
     char password[10];
   
     /* To select the randomizer inside the loop */
-    randomizer = rand() % 4;
+    int randomizer = rand() % 4;
   
     /* Iterate over the range [0, no] */
     for (i = 0; i < no; i++) {
@@ -66,8 +65,8 @@ void randomPasswordGeneration(int no)
 int main()
 {
     /* Function Call */
-	int n = 10
-    randomPasswordGeneration(n);
+	int n = 10;
+	randomPasswordGeneration(n);
   
     return (0);
 }
