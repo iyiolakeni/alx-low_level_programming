@@ -7,7 +7,7 @@
  * password of length
  * @N: number to generate
  */
-void randomPassword(int N)
+void randomPassword(int n)
 {
 	/* Counters declaration and initialization */
 	int i = 0;
@@ -19,7 +19,7 @@ void randomPassword(int N)
 	srand((unsigned int)(time(NULL)));
 
 	/* Create an Array of numbers */
-	char num[] = "0123456789";
+	char num[] = {1,2,3,4,5,6,7,8,9,0};
 
 	/* Arrays of alphabets */
 	char let[] = "abcdefghijklmonpqrstuvwxyz";
@@ -29,12 +29,12 @@ void randomPassword(int N)
 	char sym[] = "!@#$%^&*()_+?:{}][|";
 
 	/* Store random passowrd */
-	char password[N];
+	char password[n];
 
 	/* Select randomizer inside loop */
 	randomizer = rand() % 4;
 
-	for (i = 0; i < N; i++)
+	for (i = 0; i < n; i++)
 	{
 		if (randomizer == 1)
 		{
