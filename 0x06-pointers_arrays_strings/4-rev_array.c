@@ -7,14 +7,14 @@
  */
 void reverse_array(int *a, int n)
 {
-	int i = 0;/* Ensures the array does not overlap" */
+	int i = 0;
 	int array;
 
-	while (i < n)
+	while (i < n - 1) /* Ensures the array Omits null" */
 	{
-		array = a[i];
-		a[i] = a[n];
-		a[n] = array;
+		array = *(a + i);
+		*(a + i) = *(a + n - 1);
+		*(a + n - 1) = array;
 		i++;
 		n--;
 	}
