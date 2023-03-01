@@ -7,7 +7,7 @@
  */
 void reverse_array(int *a, int n)
 {
-	int i = -1;/* Ensures the array does not overlap" */
+	int i = 0;/* Ensures the array does not overlap" */
 	int array;
 
 	while (i < n)
