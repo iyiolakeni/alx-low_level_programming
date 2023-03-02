@@ -45,7 +45,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (unt + 2 > size_r)
 			return (0);
 		while (unt-- >= 0)
-			r[l + 1] = r[l];
+			r[unt + 1] = r[unt];
 		r[0] = d + '0';
 	}
 	return (r);
