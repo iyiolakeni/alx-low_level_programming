@@ -32,10 +32,10 @@ int isPalrec(char *s, int i, int j)
 */
 int is_palindrome(char *s)
 {
-	int n = strlen(str);
+	int n = strlen(s);
 
 	/* If string is empty it is palindrome*/
 	if (n == 0)
 		return (1);
-	return (isPalrec(str, 0, n - 1));
+	return (isPalrec(s, 0, n - 1));
 }
