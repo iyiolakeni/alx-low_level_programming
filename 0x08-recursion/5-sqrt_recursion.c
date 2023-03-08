@@ -21,6 +21,7 @@ int sqrchecker(int i, int n)
 	}
 	return (0);
 }
+
 /**
  * _sqrt_recursion- find square root of natural number
  * @n: natural number
@@ -29,10 +30,9 @@ int sqrchecker(int i, int n)
 
 int _sqrt_recursion(int n)
 {
-    int i = 0;
+	int i = 0;
 
-    if (sqrchecker(i, n) == n && n != 1)
-        return (-1);
-    return (sqrchecker(i,n));
+	if (sqrchecker(i, n) == n && n != 1)
+		return (-1);
+	return (sqrchecker(i, n));
 }
-
