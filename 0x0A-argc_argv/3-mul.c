@@ -10,8 +10,7 @@
 */
 int main(int argc, char **argv)
 {
-	int i;
-	int mult = 1;
+	int mult;
 
 	if (argc == 3)
 	{
