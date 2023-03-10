@@ -10,33 +10,22 @@
  *Return: always 0
 */
 int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int add = 0;
-	int j, i;
+	int sum = 0, b, i;
 
-	if (argc < 1)
+	for (b = 1; b < argc; b++)
 	{
-		printf("%d\n", 0);
-		return (1);
-	}
-	else
-	{
-		for (i = 1; i < argc; i++)
+		for (i = 0; argv[b][i]; i++)
 		{
-			for (j = 0; argv[i][j]; j++)
+			if (argv[b][i] < '0' || argv[b][i] > '9')
 			{
-				if (isdigit(argv[i][j]))
-				{
-					add += atoi(argv[i]);
-				}
-				else
-				{
-					printf("Error\n");
-					return (1);
-				}
+				printf("Error\n");
+				return (1);
 			}
 		}
-		printf("%d\n", add);
-		return (0);
+		sum += atoi(argv[b]);
 	}
+	printf("%d\n", sum);
+	return (0);
 }
