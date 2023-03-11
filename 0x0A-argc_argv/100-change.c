@@ -47,7 +47,7 @@ int calculate_cents(int num)
  * Return: 0 for success
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int number;
 
@@ -58,7 +58,8 @@ int main(int argc, char *argv[])
 	number = atoi(argv[1]);
 	if (number < 0)
 	{
-		return (printf("Error\n"), 1);
+		printf("0\n");
+		return (1);
 	}
 	printf("%d\n", calculate_cents(number));
 	return (0);
