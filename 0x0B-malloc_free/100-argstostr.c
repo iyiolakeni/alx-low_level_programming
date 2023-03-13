@@ -30,20 +30,17 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	else
+	k = 0;
+	for (i = 0; i < ac; i++)
 	{
-		k = 0;
-		for (i = 0; i < ac; i++)
+		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			for (j = 0; av[i][j] != '\0'; j++)
-			{
-				mem[k] = av[i][j];
-				k++;
-			}
-			mem[k] = '\n';
+			mem[k] = av[i][j];
 			k++;
 		}
-		mem[k] = '\0';
-		return (mem);
+		mem[k] = '\n';
+		k++;
 	}
+	mem[k] = '\0';
+	return (mem);
 }
