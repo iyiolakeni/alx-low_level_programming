@@ -27,9 +27,7 @@ char *argstostr(int ac, char **av)
 	avarray += (ac + 1);
 	mem = malloc(sizeof(char) * avarray);
 	if (mem == NULL)
-	{
 		return (NULL);
-	}
 	k = 0;
 	for (i = 0; i < ac; i++)
 	{
@@ -41,8 +39,6 @@ char *argstostr(int ac, char **av)
 		mem[k] = '\n';
 		k++;
 	}
-
 	mem[k] = '\0';
-
 	return (mem);
 }
