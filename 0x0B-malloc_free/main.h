@@ -42,4 +42,21 @@ int **alloc_grid(int width, int height);
  * Return: 0 always
 */
 void free_grid(int **grid, int height);
+
+/**
+ * argstostr- function to concatenate all argument
+ * @ac: integer
+ * @av: argument vector
+ *
+ * Return: 0 always
+*/
+char *argstostr(int ac, char **av);
+
+/**
+ * strtow- function to split two words
+ * @str to be splitted
+ *
+ * Return: splitted s
+*/
+char **strtow(char *str);
 #endif
