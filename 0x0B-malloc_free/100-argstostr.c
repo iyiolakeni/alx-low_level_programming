@@ -41,6 +41,8 @@ char *argstostr(int ac, char **av)
 		mem[k] = '\n';
 		k++;
 	}
+
 	mem[k] = '\0';
+
 	return (mem);
 }
