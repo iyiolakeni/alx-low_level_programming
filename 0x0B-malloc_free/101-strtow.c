@@ -40,7 +40,7 @@ char **strtow(char *str)
 	wc = wordCount(str);
 	if (wc < 1)
 		return (NULL);
-	mem = malloc(sizeof(char) * wc);
+	mem = malloc(sizeof(char) * (wc + 1));
 	if (mem == NULL)
 		return (NULL);
 	i = 0;
