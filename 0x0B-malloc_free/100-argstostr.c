@@ -5,32 +5,29 @@
  * argstostr- function to concatenate all argument
  * @ac: integer
  * @av: argument vector
- *
  * Return: 0 always
 */
 char *argstostr(int ac, char **av)
 {
-	int avarray;
-	char *mem;
-	int i;
-	int j;
-	int k;
+	int i, j, k = 0, avarray = 0; /* size of array av */
+	char *mem; /* memory space */
 
 	if (ac == 0 || av == NULL)
-		return (NULL);
-
-	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
-			avarray++;
+		return (NULL);
 	}
 
-	avarray += (ac + 1);
+	for (i = 0; i < ac; i++) /* Loop to get array size */
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			avarray += 1;
+		}
+		avarray += 1;
+	}
 	mem = malloc(sizeof(char) * avarray);
-	if (mem == NULL)
-		return (NULL);
-	k = 0;
-	for (i = 0; i < ac; i++)
+
+	for (i = 0; i < ac; i++) /* Loop to Add all arguments */
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
@@ -40,8 +37,14 @@ char *argstostr(int ac, char **av)
 		mem[k] = '\n';
 		k++;
 	}
-
 	mem[k] = '\0';
 
-	return (mem);
+	if (mem == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		return (mem);
+	}
 }
