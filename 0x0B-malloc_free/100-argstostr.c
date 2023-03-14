@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 		}
 		avarray += 1;
 	}
-	mem = malloc(sizeof(av) * avarray);
+	mem = malloc((sizeof(char) * avarray) + 1);
 
 	for (i = 0; i < ac; i++) /* Loop to Add all arguments */
 	{
