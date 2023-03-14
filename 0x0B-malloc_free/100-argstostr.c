@@ -22,10 +22,10 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
-			avarray++; /* a loop to get the size of av array */
+			avarray++;
 	}
 
-	avarray += (ac);
+	avarray += (ac + 1);
 	mem = malloc(sizeof(char) * avarray);
 	if (mem == NULL)
 		return (NULL);
@@ -42,5 +42,6 @@ char *argstostr(int ac, char **av)
 	}
 
 	mem[k] = '\0';
+
 	return (mem);
 }
