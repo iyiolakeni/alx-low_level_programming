@@ -41,4 +41,13 @@ int *array_range(int min, int max);
  * Return: 0 always
 */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c);
 #endif
