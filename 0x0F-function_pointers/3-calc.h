@@ -35,11 +35,6 @@ int op_div(int a, int b);
  * Return: modulus of a and b
 */
 int op_mod(int a, int b);
-/**
- * get_op_func - returns pointer to functions
- * @s: operator to be passed as argument
- * Return: pointer always
-*/
 int (*get_op_func(char *s))(int, int);
 /**
  * struct op - Struct op

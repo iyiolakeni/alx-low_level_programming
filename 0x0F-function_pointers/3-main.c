@@ -11,10 +11,12 @@ int main(int argc, char **argv)
 {
 	if (argc == 4)
 	{
-		int num1 = atoi(argv[1]);
-		int num2 = atoi(argv[3]);
+		int num1;
+		int num2;
 		int (*cal)(int, int);
 
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[3]);
 		cal = get_op_func(argv[2]);
 		if ((*argv[2] == '%' || *argv[2] == '/') && num2 == 0)
 		{
