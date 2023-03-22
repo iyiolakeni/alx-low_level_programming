@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 	ptr_func = (unsigned char *)main;/*function main pointer*/
-	if (bytes > 0)/*opcodes are machine instrutcion*/
+	if (bytes > 0)/*opcodes are instruction machine code*/
 	{
 		while (i < (bytes - 1))/*loop to determine opcode*/
 			printf("%02hhx ", ptr_func[i++]);/*print opcode in hexadecimal*/
