@@ -19,7 +19,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 		if (arg == NULL) /*check if arguments contains Null*/
 			printf("(nil)");
-		printf("%s", arg);/*Retrieve arguments*/
+		else
+			printf("%s", arg);/*Retrieve arguments*/
 		i++;
 	}
 	va_end(print);/*Free the List*/
