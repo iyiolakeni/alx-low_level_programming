@@ -21,20 +21,20 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(nth_node);
 		return (1);
 	}
-
-	while (i < index)
+	else
 	{
-		if (nth_node == NULL)
-			return (-1);
-
-		pre_node = nth_node;
-		nth_node = nth_node->next;
-		i++;
+		while (i < index)
+		{
+			if (nth_node == NULL)
+				return (-1);
+			pre_node = nth_node;
+			nth_node = nth_node->next;
+			i++;
+		}
 	}
-
 	if (nth_node == NULL)
 		return (-1);
-
+	
 	pre_node->next = nth_node->next;
 	free(nth_node);
 
