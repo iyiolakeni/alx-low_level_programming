@@ -20,5 +20,6 @@ int pop_listint(listint_t **head)
 
 		return (n);
 	}
-	return (0);
+	else
+		return (0);
 }
