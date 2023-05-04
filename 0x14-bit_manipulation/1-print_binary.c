@@ -20,8 +20,8 @@ void print_binary(unsigned long int n)
 		}
 	while (count > 0)
 	{
-		if ((i & n) == 0)
-			i = i >> 1;
+		if ((count & n) == 0)
+			count = count >> 1;
 		else
 			break;
 	}
@@ -31,8 +31,7 @@ void print_binary(unsigned long int n)
 			_putchar('0');
 		else
 			_putchar('1');
-		count = i >> 1;
+		count = count >> 1;
 	}
 
 }
-
