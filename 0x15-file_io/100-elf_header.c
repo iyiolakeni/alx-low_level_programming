@@ -266,61 +266,42 @@ void close_elf(int elf)
  *
  * Return: On success, return 0. On error, return 1.
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int fd;
-	unsigned char elf_int[EI_NIDENT];
-	Elf32_Ehdr header;
+    int fd;
+    unsigned char elf_int[EI_NIDENT];
 
-	if (argc != 2)
-	{
-		dprintf(STDERR_FILENO, "Usage: %s <elf-file>\n", argv[0]);
-		return (1);
-	}
+    if (argc != 2)
+    {
+        fprintf(stderr, "Usage: %s <ELF-file>\n", argv[0]);
+        return (EXIT_FAILURE);
+    }
 
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Cannot read file '%s'\n", argv[1]);
-		return (1);
-	}
+    fd = open(argv[1], O_RDONLY);
+    if (fd == -1)
+    {
+        perror("open");
+        return (EXIT_FAILURE);
+    }
 
-	if (read(fd, elf_int, EI_NIDENT) != EI_NIDENT)
-	{
-		dprintf(STDERR_FILENO, "Error: Cannot read ELF identification numbers\n");
-		close_elf(fd);
-		return (1);
-	}
+    if (read(fd, elf_int, EI_NIDENT) != EI_NIDENT)
+    {
+        fprintf(stderr, "Error: Cannot read file\n");
+        close(fd);
+        return (EXIT_FAILURE);
+    }
 
-	check_elf(elf_int);
+    check_elf(elf_int);
+    print_magic(elf_int);
+    print_class(elf_int);
+    print_data(elf_int);
+    print_version(elf_int);
+    print_abi(elf_int);
+    print_osabi(elf_int);
+    /*code to read and print other sections of ELF file*/
 
-	printf("ELF Header:\n");
+    close_elf(fd);
 
-	print_magic(elf_int);
-	print_class(elf_int);
-	print_data(elf_int);
-	print_version(elf_int);
-	print_abi(elf_int);
-	print_osabi(elf_int);
-
-	if (lseek(fd, EI_NIDENT, SEEK_SET) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Cannot seek to start of file\n");
-		close_elf(fd);
-		return (1);
-	}
-
-	if (read(fd, &header, sizeof(header)) != sizeof(header))
-	{
-		dprintf(STDERR_FILENO, "Error: Cannot read ELF header\n");
-		close_elf(fd);
-		return (1);
-	}
-
-	print_type(header.e_type, elf_int);
-	print_entry(header.e_entry, elf_int);
-
-	close_elf(fd);
-
-	return (0);
+    return (EXIT_SUCCESS);
 }
+
