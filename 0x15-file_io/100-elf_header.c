@@ -260,55 +260,67 @@ void close_elf(int elf)
 }
 
 /**
- * main - Displays the information contained in the
- *        ELF header at the start of an ELF file.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * main - displays the information contained in the ELF header of a given file
+ * @argc: the number of arguments passed to the program
+ * @argv: an array containing the arguments passed to the program
  *
- * Return: 0 on success.
- *
- * Description: If the file is not an ELF File or
- *              the function fails - exit code 98.
+ * Return: On success, return 0. On error, return 1.
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char **argv)
 {
-	Elf64_Ehdr *header;
-	int o, r;
+	int fd;
+	unsigned char elf_int[EI_NIDENT];
+	Elf32_Ehdr header;
 
-	o = open(argv[1], O_RDONLY);
-	if (o == -1)
+	if (argc != 2)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
-		exit(98);
-	}
-	header = malloc(sizeof(Elf64_Ehdr));
-	if (header == NULL)
-	{
-		close_elf(o);
-		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
-		exit(98);
-	}
-	r = read(o, header, sizeof(Elf64_Ehdr));
-	if (r == -1)
-	{
-		free(header);
-		close_elf(o);
-		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
-		exit(98);
+		dprintf(STDERR_FILENO, "Usage: %s <elf-file>\n", argv[0]);
+		return (1);
 	}
 
-	check_elf(header->elf_int);
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Cannot read file '%s'\n", argv[1]);
+		return (1);
+	}
+
+	if (read(fd, elf_int, EI_NIDENT) != EI_NIDENT)
+	{
+		dprintf(STDERR_FILENO, "Error: Cannot read ELF identification numbers\n");
+		close_elf(fd);
+		return (1);
+	}
+
+	check_elf(elf_int);
+
 	printf("ELF Header:\n");
-	print_magic(header->elf_int);
-	print_class(header->elf_int);
-	print_data(header->elf_int);
-	print_version(header->elf_int);
-	print_osabi(header->elf_int);
-	print_abi(header->elf_int);
-	print_type(header->e_type, header->elf_int);
-	print_entry(header->e_entry, header->elf_int);
 
-	free(header);
-	close_elf(o);
+	print_magic(elf_int);
+	print_class(elf_int);
+	print_data(elf_int);
+	print_version(elf_int);
+	print_abi(elf_int);
+	print_osabi(elf_int);
+
+	if (lseek(fd, EI_NIDENT, SEEK_SET) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Cannot seek to start of file\n");
+		close_elf(fd);
+		return (1);
+	}
+
+	if (read(fd, &header, sizeof(header)) != sizeof(header))
+	{
+		dprintf(STDERR_FILENO, "Error: Cannot read ELF header\n");
+		close_elf(fd);
+		return (1);
+	}
+
+	print_type(header.e_type, elf_int);
+	print_entry(header.e_entry, elf_int);
+
+	close_elf(fd);
+
 	return (0);
 }
